@@ -10,6 +10,7 @@
 \usepackage{xcolor}
 \usepackage{helvet}
 \usepackage{amsmath}
+\usepackage{float}
 
 \renewcommand{\familydefault}{\sfdefault}
 \geometry{margin=2.4cm}
@@ -47,7 +48,7 @@ O exercício pede a comparação de três desenhos amostrais para estimar a prop
 }}
 \end{center}
 
-Foram simuladas 1.000 amostras para cada desenho. Em todos os casos, o tamanho final da amostra foi exatamente \(n = 1200\).
+Foram simuladas 1.000 amostras para cada desenho. Em todos os casos, o tamanho final da amostra foi exatamente \(n = 1200\). Para cada amostra simulada, calculei a média da variável \texttt{alfabetizada}; como a variável é binária, essa média é também a proporção de alfabetizados na amostra.
 
 \section*{1. Amostragem Aleatória Simples}
 
@@ -57,11 +58,11 @@ Esse desenho é a referência natural para o exercício, pois não usa nenhuma i
 
 \section*{2. Amostragem Estratificada}
 
-No segundo desenho, construí uma AAS com estratificação. A variável usada para definir os estratos foi \texttt{bairro}, transformada em quatro grupos. Primeiro, calculei a taxa média de alfabetização em cada bairro. Depois, agrupei os bairros em quatro estratos, de acordo com quartis dessa taxa: baixa, média baixa, média alta e alta alfabetização.
+No segundo desenho, construí uma AAS com estratificação. A variável usada para definir os estratos foi \texttt{bairro}, transformada em quatro grupos. Primeiro, calculei a taxa média de alfabetização em cada bairro. Depois, agrupei os bairros em quatro estratos, de acordo com quartis dessa taxa: baixa, média baixa, média alta e alta alfabetização. Portanto, o número de estratos foi \(h = 4\).
 
 A escolha segue o critério substantivo da estratificação: criar grupos internamente mais homogêneos em relação à variável de interesse. Como o objetivo é estimar alfabetização, faz sentido formar estratos a partir de bairros com níveis parecidos de alfabetização.
 
-A alocação da amostra foi proporcional ao tamanho populacional de cada estrato:
+A alocação da amostra foi proporcional ao tamanho populacional de cada estrato, isto é, \(n_h \approx 1200 \times N_h/N\). Os valores finais foram ajustados por arredondamento para que a soma dos \(n_h\) fosse exatamente 1.200:
 
 \begin{center}
 \begin{tabular}{lrr}
@@ -80,19 +81,23 @@ Alta & 39.756 & 231 \\
 
 \section*{3. Amostragem por Conglomerados}
 
-No terceiro desenho, usei os setores censitários como conglomerados, conforme pedido no enunciado. Fixei 10 entrevistas por setor censitário, que é o menor valor permitido pelo exercício. Assim, para chegar a 1.200 entrevistas, foram sorteados 120 setores:
+No terceiro desenho, usei os setores censitários como conglomerados, conforme pedido no enunciado. Fixei \(n_i = 10\) entrevistas por setor censitário, que é o menor valor permitido pelo exercício e está dentro do intervalo de 10 a 20 entrevistas. Assim, para chegar a 1.200 entrevistas, foram sorteados 120 setores censitários:
 
 \[
 120 \text{ setores} \times 10 \text{ entrevistas por setor} = 1200 \text{ entrevistas}
 \]
 
-Dentro de cada setor sorteado, as pessoas foram selecionadas aleatoriamente. Usei apenas setores com pelo menos 10 pessoas registradas na base, para garantir que fosse possível fazer o sorteio sem reposição dentro de cada conglomerado.
+Dentro de cada setor sorteado, as pessoas foram selecionadas aleatoriamente. Usei apenas setores com pelo menos 10 pessoas registradas na base, para garantir que fosse possível fazer o sorteio sem reposição dentro de cada conglomerado. Com isso, cada repetição do desenho por conglomerados também produz exatamente \(120 \times 10 = 1200\) pessoas.
 
 Escolhi 10 entrevistas por setor porque isso aumenta o número de setores visitados. Em um desenho por conglomerados, entrevistar muitas pessoas no mesmo setor tende a aumentar a semelhança interna da amostra. Espalhar as entrevistas por mais setores ajuda a reduzir esse problema.
 
 \section*{Resultados das simulações}
 
-A tabela abaixo resume as 1.000 simulações de cada desenho:
+A tabela abaixo resume as 1.000 simulações de cada desenho. O \textit{design effect} foi calculado como a razão entre a variância amostral das 1.000 proporções simuladas no desenho analisado e a variância amostral das 1.000 proporções simuladas no desenho AAS:
+
+\[
+DEFF_d = \frac{s^2(\hat{p}_d)}{s^2(\hat{p}_{AAS})}
+\]
 
 \begin{center}
 \begin{tabular}{lrrr}
@@ -108,7 +113,7 @@ Conglomerados & 0,8733 & 0,00011016 & 1,149 \\
 
 As três médias ficaram muito próximas da proporção populacional real, o que indica que os desenhos, como implementados nas simulações, não produziram viés relevante na estimativa média. A diferença principal aparece na dispersão das estimativas.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.92\textwidth]{grafico_distribuicoes.png}
 \caption{Distribuição das proporções estimadas em 1.000 simulações para cada desenho amostral.}
@@ -121,6 +126,8 @@ O desenho estratificado produziu variância menor do que a AAS. O \textit{design
 O desenho por conglomerados produziu variância maior do que a AAS. O \textit{design effect} foi 1,149, indicando uma variância aproximadamente 14,9\% maior do que a variância da AAS. Esse resultado é esperado porque pessoas que vivem no mesmo setor censitário tendem a ser mais parecidas entre si do que pessoas sorteadas aleatoriamente em toda a cidade. Essa semelhança interna reduz a quantidade efetiva de informação trazida pela amostra.
 
 Em termos práticos, a estratificação ajudou porque usou informação auxiliar relevante antes do sorteio. Já a amostragem por conglomerados aumenta a praticidade operacional, pois concentra entrevistas em setores sorteados, mas essa conveniência tem custo estatístico: a amostra fica menos dispersa geograficamente e, por isso, a variância tende a subir.
+
+\newpage
 
 \section*{Conclusão}
 
