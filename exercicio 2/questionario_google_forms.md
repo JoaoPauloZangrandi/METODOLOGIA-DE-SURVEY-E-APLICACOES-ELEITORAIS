@@ -92,7 +92,7 @@ Referencia complementar de formato:
 
 ### Secao 4 - Governo e representacao
 
-7. No geral, como voce avalia o governo federal atual?
+7. Como voce avalia o governo federal atual?
    - Tipo: multipla escolha
    - Obrigatoria: sim
    - Alternativas:
@@ -103,7 +103,7 @@ Referencia complementar de formato:
      - Pessimo
      - Nao sei avaliar
 
-8. Na sua opiniao, qual e a importancia dos partidos politicos para a democracia?
+8. Na sua opiniao, os partidos politicos sao importantes para a democracia?
    - Tipo: multipla escolha
    - Obrigatoria: sim
    - Alternativas:
@@ -120,7 +120,7 @@ Referencia complementar de formato:
    - Rotulo 1: Nunca escutam
    - Rotulo 5: Sempre escutam
 
-10. Mesmo que voce nao seja filiado(a), existe algum partido politico pelo qual voce tem preferencia ou simpatia?
+10. Voce tem algum partido politico de preferencia?
     - Tipo: multipla escolha
     - Obrigatoria: sim
     - Alternativas:
@@ -130,14 +130,14 @@ Referencia complementar de formato:
       - Prefiro nao responder
     - Logica: se "Sim", ir para pergunta 11; caso contrario, ir para pergunta 12.
 
-11. Qual e o partido politico de sua preferencia ou simpatia?
+11. Qual partido politico voce prefere?
     - Tipo: resposta curta
     - Obrigatoria: sim apenas para quem respondeu "Sim" na pergunta 10
     - Instrucao: escreva a sigla ou o nome do partido.
 
 ### Secao 5 - Participacao eleitoral
 
-12. Se o voto para presidente fosse facultativo, qual seria a chance de voce votar na proxima eleicao?
+12. Se o voto nao fosse obrigatorio, qual seria a chance de voce votar na proxima eleicao para presidente?
     - Tipo: multipla escolha
     - Obrigatoria: sim
     - Alternativas:
