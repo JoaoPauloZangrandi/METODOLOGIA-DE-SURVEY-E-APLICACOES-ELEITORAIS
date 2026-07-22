@@ -2,6 +2,9 @@
 
 Titulo: Participacao eleitoral, governo e representacao politica
 
+Link para responder:
+https://docs.google.com/forms/d/e/1FAIpQLSf1Hoi1rBaiHz_XNyP9UbH19_Uv1_fucI8IArTZ19_zyg-Y_w/viewform
+
 Mensagem de recrutamento:
 
 Voce esta sendo convidado(a) a responder uma pesquisa curta sobre politica, governo e representacao no Brasil. O questionario e anonimo, autoaplicado e leva cerca de 3 a 4 minutos. Nao existem respostas certas ou erradas. Leia cada pergunta com calma e responda de acordo com sua opiniao. A participacao e voluntaria, e voce pode encerrar o formulario a qualquer momento.
