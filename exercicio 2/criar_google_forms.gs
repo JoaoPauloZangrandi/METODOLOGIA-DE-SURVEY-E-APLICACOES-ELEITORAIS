@@ -85,7 +85,7 @@ function criarFormularioLista2() {
   form.addPageBreakItem().setTitle('Governo e representação');
 
   form.addMultipleChoiceItem()
-    .setTitle('Como você avalia o governo federal atual?')
+    .setTitle('No geral, como você avalia o governo federal atual?')
     .setRequired(true)
     .setChoiceValues([
       'Ótimo',
@@ -97,7 +97,7 @@ function criarFormularioLista2() {
     ]);
 
   form.addMultipleChoiceItem()
-    .setTitle('Na sua opinião, os partidos políticos são importantes para a democracia?')
+    .setTitle('Na sua opinião, qual é a importância dos partidos políticos para a democracia?')
     .setRequired(true)
     .setChoiceValues([
       'Muito importantes',
@@ -114,13 +114,13 @@ function criarFormularioLista2() {
     .setLabels('Nunca escutam', 'Sempre escutam');
 
   var preferencia = form.addMultipleChoiceItem()
-    .setTitle('Você tem algum partido político de preferência?')
+    .setTitle('Mesmo que você não seja filiado(a), existe algum partido político pelo qual você tem preferência ou simpatia?')
     .setRequired(true);
 
   var partido = form.addPageBreakItem().setTitle('Preferência partidária');
 
   form.addTextItem()
-    .setTitle('Qual partido político você prefere?')
+    .setTitle('Qual é o partido político de sua preferência ou simpatia?')
     .setHelpText('Escreva a sigla ou o nome do partido.')
     .setRequired(true);
 
@@ -134,7 +134,7 @@ function criarFormularioLista2() {
   ]);
 
   form.addMultipleChoiceItem()
-    .setTitle('Se o voto não fosse obrigatório, qual seria a chance de você votar na próxima eleição para presidente?')
+    .setTitle('Se o voto para presidente fosse facultativo, qual seria a chance de você votar na próxima eleição?')
     .setRequired(true)
     .setChoiceValues([
       'Com certeza votaria',
