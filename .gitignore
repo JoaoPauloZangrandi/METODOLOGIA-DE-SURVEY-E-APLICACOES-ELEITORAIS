@@ -1,3 +1,7 @@
 macae.rds
 *.RData
 *.Rhistory
+*.aux
+*.log
+preview_pagina*.png
+*_amostragem.csv
