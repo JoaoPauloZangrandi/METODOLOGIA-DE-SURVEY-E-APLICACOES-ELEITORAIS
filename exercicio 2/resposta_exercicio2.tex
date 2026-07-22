@@ -9,12 +9,13 @@
 \usepackage{helvet}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{longtable}
 
 \renewcommand{\familydefault}{\sfdefault}
-\geometry{margin=2.4cm}
+\geometry{margin=2.25cm}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.65em}
-\setlist{nosep,leftmargin=1.2cm}
+\setlength{\parskip}{0.55em}
+\setlist{nosep,leftmargin=1.1cm}
 
 \definecolor{azul}{HTML}{1F4E79}
 \definecolor{cinza}{HTML}{F2F4F7}
@@ -26,6 +27,7 @@
 }
 
 \begin{document}
+\pagenumbering{gobble}
 
 \begin{titlepage}
 \vspace*{2cm}
@@ -42,37 +44,44 @@
 {\large Autor: Joao Paulo Zangrandi\par}
 {\large 23 de julho de 2026\par}
 \end{titlepage}
+\pagenumbering{arabic}
 
 \section*{Informações gerais}
 
 \begin{center}
 \fcolorbox{azul}{cinza}{\parbox{0.9\textwidth}{
-\textbf{Tema do questionário:} atitudes políticas e participação eleitoral no Brasil.
+\textbf{Tema do questionário:} participação eleitoral, governo e representação política.
 
-\textbf{Modo de coleta:} pesquisa via internet, autoaplicada.
+\textbf{Modo de coleta:} pesquisa via internet, autoaplicada, com no máximo 12 perguntas.
 
 \textbf{Link do Google Forms:} \textbf{a inserir após criação do formulário na conta Google}.
 }}
 \end{center}
 
-\textbf{Questionário original usado como base:} CESOP-DATAFOLHA/00219, ``Avaliação Sarney / Expectativa Collor II - Cultura e Política III - CEDEC''. A página do CESOP está disponível em: \url{https://www.cesop.unicamp.br/por/banco_de_dados/v/458}. O questionário original está disponível em: \url{https://www.cesop.unicamp.br/vw/1IsfxSa4wNQ_MDA_26dd5_}.
+\textbf{Questionário original usado como base:} CESOP-DATAFOLHA/00219, ``Avaliação Sarney / Expectativa Collor II - Cultura e Política III - CEDEC''. A página do CESOP está disponível em: \url{https://www.cesop.unicamp.br/por/banco_de_dados/v/458}. O questionário original está disponível em: \url{https://www.cesop.unicamp.br/vw/1IsfxSa4wNQ_MDA_26dd5_}. Como referência complementar de formato e temas atuais de pesquisa eleitoral e avaliação de governo, consultei a página pública de relatórios da Quaest: \url{https://quaest.com.br/relatorios/}.
 
-\section*{Mensagem de recrutamento e instruções}
+\section*{Mensagem de recrutamento}
 
-Você está sendo convidado(a) a responder uma pesquisa curta sobre atitudes políticas e participação eleitoral no Brasil. O questionário é anônimo, autoaplicado e leva cerca de 3 minutos. Não existem respostas certas ou erradas; responda de acordo com sua opinião. Sua participação é voluntária e você pode parar a qualquer momento.
+Você está sendo convidado(a) a responder uma pesquisa curta sobre política, governo e representação no Brasil. O questionário é anônimo, autoaplicado e leva cerca de 3 a 4 minutos. Não existem respostas certas ou erradas. Leia cada pergunta com calma e responda de acordo com sua opinião. A participação é voluntária, e você pode encerrar o formulário a qualquer momento.
 
 \section*{Questionário proposto}
+
+\subsection*{Seção 1: Consentimento}
 
 \begin{enumerate}
 \item \textbf{Você concorda em participar desta pesquisa anônima?}
 
-Tipo: múltipla escolha. Obrigatória. Pulo: se ``Não concordo'', enviar formulário.
+Tipo: múltipla escolha. Obrigatória. Lógica: se ``Não concordo'', enviar formulário.
 \begin{itemize}
 \item Sim, concordo em participar
 \item Não concordo em participar
 \end{itemize}
+\end{enumerate}
 
-\item \textbf{Qual é a sua idade?}
+\subsection*{Seção 2: Perfil mínimo do respondente}
+
+\begin{enumerate}[resume]
+\item \textbf{Qual é a sua faixa de idade?}
 
 Tipo: múltipla escolha. Obrigatória.
 \begin{itemize}
@@ -96,11 +105,43 @@ Tipo: múltipla escolha. Obrigatória.
 \item Moro fora do Brasil
 \item Prefiro não responder
 \end{itemize}
+\end{enumerate}
 
+\subsection*{Seção 3: Interesse, informação e participação}
+
+\begin{enumerate}[resume]
 \item \textbf{Em geral, qual é o seu nível de interesse por política?}
 
-Tipo: escala linear de 1 a 5. Obrigatória. Rotulo 1: nenhum interesse. Rótulo 5: muito interesse.
+Tipo: escala linear de 1 a 5. Obrigatória. Rótulo 1: nenhum interesse. Rótulo 5: muito interesse.
 
+\item \textbf{Pensando nos últimos 7 dias, por qual meio você mais se informou sobre política?}
+
+Tipo: múltipla escolha. Obrigatória.
+\begin{itemize}
+\item Televisão
+\item Rádio
+\item Jornais, sites ou aplicativos de notícia
+\item Redes sociais
+\item Conversas com familiares, amigos ou colegas
+\item Não me informei sobre política nesse período
+\item Outro
+\end{itemize}
+
+\item \textbf{Se o voto não fosse obrigatório, qual seria a chance de você votar na próxima eleição para presidente?}
+
+Tipo: múltipla escolha. Obrigatória.
+\begin{itemize}
+\item Com certeza votaria
+\item Provavelmente votaria
+\item Provavelmente não votaria
+\item Com certeza não votaria
+\item Ainda não sei
+\end{itemize}
+\end{enumerate}
+
+\subsection*{Seção 4: Governo e representação}
+
+\begin{enumerate}[resume]
 \item \textbf{Como você avalia o governo federal atual?}
 
 Tipo: múltipla escolha. Obrigatória.
@@ -112,31 +153,6 @@ Tipo: múltipla escolha. Obrigatória.
 \item Péssimo
 \item Não sei avaliar
 \end{itemize}
-
-\item \textbf{Se o voto não fosse obrigatório, você votaria na próxima eleição para presidente?}
-
-Tipo: múltipla escolha. Obrigatória.
-\begin{itemize}
-\item Com certeza votaria
-\item Provavelmente votaria
-\item Provavelmente não votaria
-\item Com certeza não votaria
-\item Ainda não sei
-\end{itemize}
-
-\item \textbf{Você tem algum partido político de preferência?}
-
-Tipo: múltipla escolha. Obrigatória. Pulo: se ``Sim'', ir para a pergunta 8; caso contrário, ir para a pergunta 9.
-\begin{itemize}
-\item Sim
-\item Não
-\item Não sei
-\item Prefiro não responder
-\end{itemize}
-
-\item \textbf{Qual partido político você prefere?}
-
-Tipo: resposta curta. Obrigatória apenas para quem respondeu ``Sim'' na pergunta 7. Instrução: escreva a sigla ou o nome do partido.
 
 \item \textbf{Na sua opinião, os partidos políticos são importantes para a democracia?}
 
@@ -153,30 +169,50 @@ Tipo: múltipla escolha. Obrigatória.
 
 Tipo: escala linear de 1 a 5. Obrigatória. Rótulo 1: nunca escutam. Rótulo 5: sempre escutam.
 
-\item \textbf{Pensando nas últimas duas semanas, por qual meio você mais se informou sobre política?}
+\item \textbf{Você tem algum partido político de preferência?}
 
-Tipo: múltipla escolha. Obrigatória.
+Tipo: múltipla escolha. Obrigatória. Lógica: se ``Sim'', ir para a pergunta 11; caso contrário, ir para a pergunta 12.
 \begin{itemize}
-\item Televisão
-\item Rádio
-\item Jornais ou portais de notícia na internet
-\item Redes sociais
-\item Conversas com familiares, amigos ou colegas
-\item Não me informei sobre política nesse período
-\item Outro
+\item Sim
+\item Não
+\item Não sei
+\item Prefiro não responder
 \end{itemize}
 
+\item \textbf{Qual partido político você prefere?}
+
+Tipo: resposta curta. Obrigatória apenas para quem respondeu ``Sim'' na pergunta 10. Instrução: escreva a sigla ou o nome do partido.
+\end{enumerate}
+
+\subsection*{Seção 5: Fechamento}
+
+\begin{enumerate}[resume]
 \item \textbf{Em uma frase, o que mais poderia aumentar sua confiança na política brasileira?}
 
 Tipo: parágrafo. Não obrigatória.
 \end{enumerate}
 
+\section*{Matriz de adaptação}
+
+\begin{longtable}{p{0.17\textwidth}p{0.35\textwidth}p{0.38\textwidth}}
+\toprule
+\textbf{Bloco} & \textbf{Base no questionário original} & \textbf{Adaptação para online} \\
+\midrule
+Perfil & Sexo, idade e categorias sociodemográficas do CESOP & Mantive apenas idade e região, reduzindo carga inicial e preservando variáveis mínimas de segmentação. \\
+Interesse e informação & Interesse político, participação e meios de informação & Usei pergunta curta de interesse e uma pergunta com cue temporal: ``últimos 7 dias''. \\
+Participação eleitoral & Perguntas sobre título, voto no primeiro e segundo turno e voto facultativo & Mantive a ideia de voto facultativo, mas atualizei para a próxima eleição presidencial. \\
+Governo & Avaliação de Sarney e expectativa sobre Collor & Atualizei para avaliação do governo federal atual, em escala curta e familiar. \\
+Partidos e representação & Preferência partidária, partidos e percepção sobre políticos & Mantive preferência partidária com pulo, importância dos partidos e escuta da população. \\
+Fechamento & Perguntas abertas e justificativas presentes no original & Incluí uma única pergunta aberta, não obrigatória, para captar justificativas sem aumentar muito o esforço. \\
+\bottomrule
+\end{longtable}
+
 \section*{Justificativa}
 
-O questionário original do CESOP-DATAFOLHA/00219 tinha muitas perguntas presenciais sobre avaliação de governo, voto anterior, preferência partidária, papel dos partidos e percepção sobre políticos. Mantive esse eixo temático, mas adaptei o instrumento para uma aplicação online, curta e autoaplicada. Por isso, reduzi o questionário para 12 perguntas, atualizei referências temporais e substituí perguntas muito dependentes do contexto de 1990 por perguntas mais gerais sobre atitudes políticas atuais.
+O instrumento parte do questionário CESOP-DATAFOLHA/00219, que tem mais de 12 perguntas e cobre avaliação de governo, voto, preferência partidária, partidos e percepção sobre políticos. Em vez de copiar o questionário, selecionei esses blocos substantivos e os adaptei para uma pesquisa online e autoaplicada. A organização em seções curtas segue a lógica discutida nos slides da aula: o respondente precisa compreender a pergunta, recuperar informação, formar um julgamento e transformar esse julgamento em resposta. Por isso, o questionário começa com consentimento e perfil mínimo, avança para interesse e informação política, passa por participação eleitoral e só depois chega a avaliação de governo e representação. Essa ordem reduz saltos temáticos e ajuda a manter a recuperação de informação mais natural.
 
-As escolhas de redação seguem os critérios discutidos por Krosnick (2018) e pela literatura de desenho de questionários: perguntas curtas, linguagem simples, alternativas exclusivas e escalas simétricas. Também evitei perguntas longas, dupla negação e listas extensas demais, pois esse tipo de formulação aumenta a dificuldade cognitiva e pode estimular \textit{satisficing}. Em perguntas de atitude, usei escalas de 5 pontos ou alternativas ordenadas, facilitando o mapeamento entre julgamento e resposta.
+As perguntas foram reescritas usando os critérios de Krosnick (2018) e do capítulo de Wolf et al. (2016) sobre desenho de questionários: simplicidade, especificidade, economia de palavras, alternativas exaustivas e mutuamente exclusivas, além de escalas simétricas e familiares. Também usei recomendações dos slides para reduzir \textit{satisficing}: evitar redações longas, conceitos vagos, dupla negação e listas excessivas. A pergunta sobre meios de informação usa o cue ``últimos 7 dias'', o que reduz a carga de memória; a preferência partidária usa branching, pois apenas quem diz ter partido de preferência precisa responder qual partido prefere; e a pergunta aberta final é opcional, porque respostas abertas aumentam esforço e tempo de resposta.
 
-Como o modo de coleta é online e autoaplicado, incluí uma mensagem inicial breve, uma pergunta de consentimento e poucos pulos. O pulo principal aparece na preferência partidária: apenas quem declara ter partido de preferência recebe a pergunta aberta sobre qual partido prefere. Essa decisão reduz carga desnecessária para quem não tem preferência partidária e melhora a experiência de resposta, sem copiar literalmente o questionário original.
+Por fim, o instrumento dialoga com formatos usuais de pesquisas eleitorais e de avaliação de governo, inclusive relatórios públicos da Quaest, que frequentemente organizam resultados em blocos como avaliação de governo, voto, rejeição, segmentação e percepção política. A adaptação para Google Forms privilegia perguntas fechadas, escalas de 5 pontos e uma mensagem de recrutamento curta, pois em surveys online a motivação do respondente é limitada e a probabilidade de abandono cresce quando o formulário parece longo ou difícil. O resultado é um questionário de 12 perguntas que preserva o tema do CESOP, atualiza o conteúdo para o contexto presente e aplica os princípios metodológicos da aula.
 
 \end{document}

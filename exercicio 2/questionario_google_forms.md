@@ -1,18 +1,24 @@
 # Questionario para Google Forms
 
-Titulo: Atitudes politicas e participacao eleitoral no Brasil
+Titulo: Participacao eleitoral, governo e representacao politica
 
-Mensagem de recrutamento e instrucoes:
+Mensagem de recrutamento:
 
-Voce esta sendo convidado(a) a responder uma pesquisa curta sobre atitudes politicas e participacao eleitoral no Brasil. O questionario e anonimo, autoaplicado e leva cerca de 3 minutos. Nao existem respostas certas ou erradas; responda de acordo com sua opiniao. Sua participacao e voluntaria e voce pode parar a qualquer momento.
+Voce esta sendo convidado(a) a responder uma pesquisa curta sobre politica, governo e representacao no Brasil. O questionario e anonimo, autoaplicado e leva cerca de 3 a 4 minutos. Nao existem respostas certas ou erradas. Leia cada pergunta com calma e responda de acordo com sua opiniao. A participacao e voluntaria, e voce pode encerrar o formulario a qualquer momento.
 
-Base original usada:
+Questionario original usado como base:
 
-- CESOP-DATAFOLHA/00219: "Avaliacao Sarney / Expectativa Collor II - Cultura e Politica III - CEDEC"
+- CESOP-DATAFOLHA/00219: Avaliacao Sarney / Expectativa Collor II - Cultura e Politica III - CEDEC
 - Pagina do CESOP: https://www.cesop.unicamp.br/por/banco_de_dados/v/458
 - Questionario original: https://www.cesop.unicamp.br/vw/1IsfxSa4wNQ_MDA_26dd5_
 
-## Perguntas
+Referencia complementar de formato:
+
+- Relatorios da Quaest: https://quaest.com.br/relatorios/
+
+## Estrutura no Google Forms
+
+### Secao 1 - Consentimento
 
 1. Voce concorda em participar desta pesquisa anonima?
    - Tipo: multipla escolha
@@ -20,9 +26,11 @@ Base original usada:
    - Alternativas:
      - Sim, concordo em participar
      - Nao concordo em participar
-   - Pulo: se "Nao concordo", enviar formulario.
+   - Logica: se "Nao concordo", enviar formulario.
 
-2. Qual e a sua idade?
+### Secao 2 - Perfil minimo do respondente
+
+2. Qual e a sua faixa de idade?
    - Tipo: multipla escolha
    - Obrigatoria: sim
    - Alternativas:
@@ -45,6 +53,8 @@ Base original usada:
      - Moro fora do Brasil
      - Prefiro nao responder
 
+### Secao 3 - Interesse, informacao e participacao
+
 4. Em geral, qual e o seu nivel de interesse por politica?
    - Tipo: escala linear
    - Obrigatoria: sim
@@ -52,7 +62,31 @@ Base original usada:
    - Rotulo 1: Nenhum interesse
    - Rotulo 5: Muito interesse
 
-5. Como voce avalia o governo federal atual?
+5. Pensando nos ultimos 7 dias, por qual meio voce mais se informou sobre politica?
+   - Tipo: multipla escolha
+   - Obrigatoria: sim
+   - Alternativas:
+     - Televisao
+     - Radio
+     - Jornais, sites ou aplicativos de noticia
+     - Redes sociais
+     - Conversas com familiares, amigos ou colegas
+     - Nao me informei sobre politica nesse periodo
+     - Outro
+
+6. Se o voto nao fosse obrigatorio, qual seria a chance de voce votar na proxima eleicao para presidente?
+   - Tipo: multipla escolha
+   - Obrigatoria: sim
+   - Alternativas:
+     - Com certeza votaria
+     - Provavelmente votaria
+     - Provavelmente nao votaria
+     - Com certeza nao votaria
+     - Ainda nao sei
+
+### Secao 4 - Governo e representacao
+
+7. Como voce avalia o governo federal atual?
    - Tipo: multipla escolha
    - Obrigatoria: sim
    - Alternativas:
@@ -63,32 +97,7 @@ Base original usada:
      - Pessimo
      - Nao sei avaliar
 
-6. Se o voto nao fosse obrigatorio, voce votaria na proxima eleicao para presidente?
-   - Tipo: multipla escolha
-   - Obrigatoria: sim
-   - Alternativas:
-     - Com certeza votaria
-     - Provavelmente votaria
-     - Provavelmente nao votaria
-     - Com certeza nao votaria
-     - Ainda nao sei
-
-7. Voce tem algum partido politico de preferencia?
-   - Tipo: multipla escolha
-   - Obrigatoria: sim
-   - Alternativas:
-     - Sim
-     - Nao
-     - Nao sei
-     - Prefiro nao responder
-   - Pulo: se "Sim", ir para a pergunta 8; caso contrario, ir para a pergunta 9.
-
-8. Qual partido politico voce prefere?
-   - Tipo: resposta curta
-   - Obrigatoria: sim apenas para quem respondeu "Sim" na pergunta 7
-   - Instrucao: escreva a sigla ou o nome do partido.
-
-9. Na sua opiniao, os partidos politicos sao importantes para a democracia?
+8. Na sua opiniao, os partidos politicos sao importantes para a democracia?
    - Tipo: multipla escolha
    - Obrigatoria: sim
    - Alternativas:
@@ -98,24 +107,29 @@ Base original usada:
      - Nada importantes
      - Nao sei avaliar
 
-10. De modo geral, voce acha que os politicos brasileiros escutam as demandas da populacao?
-    - Tipo: escala linear
-    - Obrigatoria: sim
-    - Escala: 1 a 5
-    - Rotulo 1: Nunca escutam
-    - Rotulo 5: Sempre escutam
+9. De modo geral, voce acha que os politicos brasileiros escutam as demandas da populacao?
+   - Tipo: escala linear
+   - Obrigatoria: sim
+   - Escala: 1 a 5
+   - Rotulo 1: Nunca escutam
+   - Rotulo 5: Sempre escutam
 
-11. Pensando nas ultimas duas semanas, por qual meio voce mais se informou sobre politica?
+10. Voce tem algum partido politico de preferencia?
     - Tipo: multipla escolha
     - Obrigatoria: sim
     - Alternativas:
-      - Televisao
-      - Radio
-      - Jornais ou portais de noticia na internet
-      - Redes sociais
-      - Conversas com familiares, amigos ou colegas
-      - Nao me informei sobre politica nesse periodo
-      - Outro
+      - Sim
+      - Nao
+      - Nao sei
+      - Prefiro nao responder
+    - Logica: se "Sim", ir para pergunta 11; caso contrario, ir para pergunta 12.
+
+11. Qual partido politico voce prefere?
+    - Tipo: resposta curta
+    - Obrigatoria: sim apenas para quem respondeu "Sim" na pergunta 10
+    - Instrucao: escreva a sigla ou o nome do partido.
+
+### Secao 5 - Fechamento
 
 12. Em uma frase, o que mais poderia aumentar sua confianca na politica brasileira?
     - Tipo: paragrafo
