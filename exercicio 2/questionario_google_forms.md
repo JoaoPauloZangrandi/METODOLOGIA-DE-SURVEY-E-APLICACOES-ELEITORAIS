@@ -10,7 +10,7 @@ Questionario original usado como base:
 
 - CESOP-DATAFOLHA/00219: Avaliacao Sarney / Expectativa Collor II - Cultura e Politica III - CEDEC
 - Pagina do CESOP: https://www.cesop.unicamp.br/por/banco_de_dados/v/458
-- Questionario original: https://www.cesop.unicamp.br/vw/1IsfxSa4wNQ_MDA_26dd5_
+- Questionario original: https://www.cesop.unicamp.br/vw/1IsfxSa4wNQ_MDA_26dd5_/quest_00219.pdf
 
 Referencia complementar de formato:
 
