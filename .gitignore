@@ -3,5 +3,9 @@ macae.rds
 *.Rhistory
 *.aux
 *.log
+*.out
 preview_pagina*.png
 *_amostragem.csv
+lista*.pdf
+slides*.pdf
+questionario_cesop*.pdf

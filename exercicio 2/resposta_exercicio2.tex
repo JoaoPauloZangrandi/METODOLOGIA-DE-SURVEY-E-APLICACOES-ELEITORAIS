@@ -1,0 +1,182 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{helvet}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\renewcommand{\familydefault}{\sfdefault}
+\geometry{margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+\setlist{nosep,leftmargin=1.2cm}
+
+\definecolor{azul}{HTML}{1F4E79}
+\definecolor{cinza}{HTML}{F2F4F7}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=azul,
+  urlcolor=azul
+}
+
+\begin{document}
+
+\begin{titlepage}
+\vspace*{2cm}
+{\Large Fundação Getulio Vargas\par}
+\vspace{0.4cm}
+{\Large Metodologia de Survey e Aplicações Eleitorais\par}
+\vspace{0.4cm}
+{\large Professor Felipe Nunes\par}
+\vfill
+{\color{azul}\Huge\bfseries Tarefa II\par}
+\vspace{0.3cm}
+{\color{azul}\LARGE Exercício 2: Elaboração de Questionário\par}
+\vfill
+{\large Autor: Joao Paulo Zangrandi\par}
+{\large 23 de julho de 2026\par}
+\end{titlepage}
+
+\section*{Informações gerais}
+
+\begin{center}
+\fcolorbox{azul}{cinza}{\parbox{0.9\textwidth}{
+\textbf{Tema do questionário:} atitudes políticas e participação eleitoral no Brasil.
+
+\textbf{Modo de coleta:} pesquisa via internet, autoaplicada.
+
+\textbf{Link do Google Forms:} \textbf{a inserir após criação do formulário na conta Google}.
+}}
+\end{center}
+
+\textbf{Questionário original usado como base:} CESOP-DATAFOLHA/00219, ``Avaliação Sarney / Expectativa Collor II - Cultura e Política III - CEDEC''. A página do CESOP está disponível em: \url{https://www.cesop.unicamp.br/por/banco_de_dados/v/458}. O questionário original está disponível em: \url{https://www.cesop.unicamp.br/vw/1IsfxSa4wNQ_MDA_26dd5_}.
+
+\section*{Mensagem de recrutamento e instruções}
+
+Você está sendo convidado(a) a responder uma pesquisa curta sobre atitudes políticas e participação eleitoral no Brasil. O questionário é anônimo, autoaplicado e leva cerca de 3 minutos. Não existem respostas certas ou erradas; responda de acordo com sua opinião. Sua participação é voluntária e você pode parar a qualquer momento.
+
+\section*{Questionário proposto}
+
+\begin{enumerate}
+\item \textbf{Você concorda em participar desta pesquisa anônima?}
+
+Tipo: múltipla escolha. Obrigatória. Pulo: se ``Não concordo'', enviar formulário.
+\begin{itemize}
+\item Sim, concordo em participar
+\item Não concordo em participar
+\end{itemize}
+
+\item \textbf{Qual é a sua idade?}
+
+Tipo: múltipla escolha. Obrigatória.
+\begin{itemize}
+\item 16 ou 17 anos
+\item 18 a 29 anos
+\item 30 a 44 anos
+\item 45 a 59 anos
+\item 60 anos ou mais
+\item Prefiro não responder
+\end{itemize}
+
+\item \textbf{Em qual região do Brasil você mora atualmente?}
+
+Tipo: múltipla escolha. Obrigatória.
+\begin{itemize}
+\item Norte
+\item Nordeste
+\item Centro-Oeste
+\item Sudeste
+\item Sul
+\item Moro fora do Brasil
+\item Prefiro não responder
+\end{itemize}
+
+\item \textbf{Em geral, qual é o seu nível de interesse por política?}
+
+Tipo: escala linear de 1 a 5. Obrigatória. Rotulo 1: nenhum interesse. Rótulo 5: muito interesse.
+
+\item \textbf{Como você avalia o governo federal atual?}
+
+Tipo: múltipla escolha. Obrigatória.
+\begin{itemize}
+\item Ótimo
+\item Bom
+\item Regular
+\item Ruim
+\item Péssimo
+\item Não sei avaliar
+\end{itemize}
+
+\item \textbf{Se o voto não fosse obrigatório, você votaria na próxima eleição para presidente?}
+
+Tipo: múltipla escolha. Obrigatória.
+\begin{itemize}
+\item Com certeza votaria
+\item Provavelmente votaria
+\item Provavelmente não votaria
+\item Com certeza não votaria
+\item Ainda não sei
+\end{itemize}
+
+\item \textbf{Você tem algum partido político de preferência?}
+
+Tipo: múltipla escolha. Obrigatória. Pulo: se ``Sim'', ir para a pergunta 8; caso contrário, ir para a pergunta 9.
+\begin{itemize}
+\item Sim
+\item Não
+\item Não sei
+\item Prefiro não responder
+\end{itemize}
+
+\item \textbf{Qual partido político você prefere?}
+
+Tipo: resposta curta. Obrigatória apenas para quem respondeu ``Sim'' na pergunta 7. Instrução: escreva a sigla ou o nome do partido.
+
+\item \textbf{Na sua opinião, os partidos políticos são importantes para a democracia?}
+
+Tipo: múltipla escolha. Obrigatória.
+\begin{itemize}
+\item Muito importantes
+\item Um pouco importantes
+\item Pouco importantes
+\item Nada importantes
+\item Não sei avaliar
+\end{itemize}
+
+\item \textbf{De modo geral, você acha que os políticos brasileiros escutam as demandas da população?}
+
+Tipo: escala linear de 1 a 5. Obrigatória. Rótulo 1: nunca escutam. Rótulo 5: sempre escutam.
+
+\item \textbf{Pensando nas últimas duas semanas, por qual meio você mais se informou sobre política?}
+
+Tipo: múltipla escolha. Obrigatória.
+\begin{itemize}
+\item Televisão
+\item Rádio
+\item Jornais ou portais de notícia na internet
+\item Redes sociais
+\item Conversas com familiares, amigos ou colegas
+\item Não me informei sobre política nesse período
+\item Outro
+\end{itemize}
+
+\item \textbf{Em uma frase, o que mais poderia aumentar sua confiança na política brasileira?}
+
+Tipo: parágrafo. Não obrigatória.
+\end{enumerate}
+
+\section*{Justificativa}
+
+O questionário original do CESOP-DATAFOLHA/00219 tinha muitas perguntas presenciais sobre avaliação de governo, voto anterior, preferência partidária, papel dos partidos e percepção sobre políticos. Mantive esse eixo temático, mas adaptei o instrumento para uma aplicação online, curta e autoaplicada. Por isso, reduzi o questionário para 12 perguntas, atualizei referências temporais e substituí perguntas muito dependentes do contexto de 1990 por perguntas mais gerais sobre atitudes políticas atuais.
+
+As escolhas de redação seguem os critérios discutidos por Krosnick (2018) e pela literatura de desenho de questionários: perguntas curtas, linguagem simples, alternativas exclusivas e escalas simétricas. Também evitei perguntas longas, dupla negação e listas extensas demais, pois esse tipo de formulação aumenta a dificuldade cognitiva e pode estimular \textit{satisficing}. Em perguntas de atitude, usei escalas de 5 pontos ou alternativas ordenadas, facilitando o mapeamento entre julgamento e resposta.
+
+Como o modo de coleta é online e autoaplicado, incluí uma mensagem inicial breve, uma pergunta de consentimento e poucos pulos. O pulo principal aparece na preferência partidária: apenas quem declara ter partido de preferência recebe a pergunta aberta sobre qual partido prefere. Essa decisão reduz carga desnecessária para quem não tem preferência partidária e melhora a experiência de resposta, sem copiar literalmente o questionário original.
+
+\end{document}
