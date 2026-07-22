@@ -107,7 +107,7 @@ Tipo: múltipla escolha. Obrigatória.
 \end{itemize}
 \end{enumerate}
 
-\subsection*{Seção 3: Interesse, informação e participação}
+\subsection*{Seção 3: Interesse, informação e agenda pública}
 
 \begin{enumerate}[resume]
 \item \textbf{Em geral, qual é o seu nível de interesse por política?}
@@ -127,15 +127,18 @@ Tipo: múltipla escolha. Obrigatória.
 \item Outro
 \end{itemize}
 
-\item \textbf{Se o voto não fosse obrigatório, qual seria a chance de você votar na próxima eleição para presidente?}
+\item \textbf{Na sua opinião, qual destes é hoje o principal problema do Brasil?}
 
 Tipo: múltipla escolha. Obrigatória.
 \begin{itemize}
-\item Com certeza votaria
-\item Provavelmente votaria
-\item Provavelmente não votaria
-\item Com certeza não votaria
-\item Ainda não sei
+\item Economia e custo de vida
+\item Saúde
+\item Educação
+\item Segurança pública e violência
+\item Corrupção
+\item Meio ambiente
+\item Outro
+\item Não sei avaliar
 \end{itemize}
 \end{enumerate}
 
@@ -184,12 +187,19 @@ Tipo: múltipla escolha. Obrigatória. Lógica: se ``Sim'', ir para a pergunta 1
 Tipo: resposta curta. Obrigatória apenas para quem respondeu ``Sim'' na pergunta 10. Instrução: escreva a sigla ou o nome do partido.
 \end{enumerate}
 
-\subsection*{Seção 5: Fechamento}
+\subsection*{Seção 5: Participação eleitoral}
 
 \begin{enumerate}[resume]
-\item \textbf{Em uma frase, o que mais poderia aumentar sua confiança na política brasileira?}
+\item \textbf{Se o voto não fosse obrigatório, qual seria a chance de você votar na próxima eleição para presidente?}
 
-Tipo: parágrafo. Não obrigatória.
+Tipo: múltipla escolha. Obrigatória.
+\begin{itemize}
+\item Com certeza votaria
+\item Provavelmente votaria
+\item Provavelmente não votaria
+\item Com certeza não votaria
+\item Ainda não sei
+\end{itemize}
 \end{enumerate}
 
 \section*{Matriz de adaptação}
@@ -200,19 +210,19 @@ Tipo: parágrafo. Não obrigatória.
 \midrule
 Perfil & Sexo, idade e categorias sociodemográficas do CESOP & Mantive apenas idade e região, reduzindo carga inicial e preservando variáveis mínimas de segmentação. \\
 Interesse e informação & Interesse político, participação e meios de informação & Usei pergunta curta de interesse e uma pergunta com cue temporal: ``últimos 7 dias''. \\
-Participação eleitoral & Perguntas sobre título, voto no primeiro e segundo turno e voto facultativo & Mantive a ideia de voto facultativo, mas atualizei para a próxima eleição presidencial. \\
+Agenda pública & Perguntas sobre avaliação política e temas nacionais & Incluí uma pergunta de principal problema do país, aproximando o respondente do contexto antes da avaliação de governo. \\
 Governo & Avaliação de Sarney e expectativa sobre Collor & Atualizei para avaliação do governo federal atual, em escala curta e familiar. \\
-Partidos e representação & Preferência partidária, partidos e percepção sobre políticos & Mantive preferência partidária com pulo, importância dos partidos e escuta da população. \\
-Fechamento & Perguntas abertas e justificativas presentes no original & Incluí uma única pergunta aberta, não obrigatória, para captar justificativas sem aumentar muito o esforço. \\
+Partidos e representação & Preferência partidária, partidos e percepção sobre políticos & Agrupei importância dos partidos, escuta da população e preferência partidária no mesmo bloco. \\
+Participação eleitoral & Perguntas sobre título, voto no primeiro e segundo turno e voto facultativo & Mantive a ideia de voto facultativo no fim, depois de ativar o contexto político e partidário. \\
 \bottomrule
 \end{longtable}
 
 \section*{Justificativa}
 
-O instrumento parte do questionário CESOP-DATAFOLHA/00219, que tem mais de 12 perguntas e cobre avaliação de governo, voto, preferência partidária, partidos e percepção sobre políticos. Em vez de copiar o questionário, selecionei esses blocos substantivos e os adaptei para uma pesquisa online e autoaplicada. A organização em seções curtas segue a lógica discutida nos slides da aula: o respondente precisa compreender a pergunta, recuperar informação, formar um julgamento e transformar esse julgamento em resposta. Por isso, o questionário começa com consentimento e perfil mínimo, avança para interesse e informação política, passa por participação eleitoral e só depois chega a avaliação de governo e representação. Essa ordem reduz saltos temáticos e ajuda a manter a recuperação de informação mais natural.
+O instrumento parte do questionário CESOP-DATAFOLHA/00219, que tem mais de 12 perguntas e cobre avaliação de governo, voto, preferência partidária, partidos e percepção sobre políticos. Em vez de copiar o questionário, selecionei esses blocos substantivos e os adaptei para uma pesquisa online e autoaplicada. A nova ordem foi pensada para não ir e voltar entre tópicos: o formulário começa com consentimento e perfil mínimo, passa por interesse e informação, pergunta sobre a agenda pública, entra em avaliação de governo e representação, aprofunda preferência partidária e fecha com participação eleitoral. Essa sequência respeita o processo cognitivo discutido nos slides: primeiro facilita a compreensão, depois oferece pistas para recuperação de informações recentes, em seguida pede julgamentos políticos e, por último, solicita uma resposta eleitoral mais sintética.
 
-As perguntas foram reescritas usando os critérios de Krosnick (2018) e do capítulo de Wolf et al. (2016) sobre desenho de questionários: simplicidade, especificidade, economia de palavras, alternativas exaustivas e mutuamente exclusivas, além de escalas simétricas e familiares. Também usei recomendações dos slides para reduzir \textit{satisficing}: evitar redações longas, conceitos vagos, dupla negação e listas excessivas. A pergunta sobre meios de informação usa o cue ``últimos 7 dias'', o que reduz a carga de memória; a preferência partidária usa branching, pois apenas quem diz ter partido de preferência precisa responder qual partido prefere; e a pergunta aberta final é opcional, porque respostas abertas aumentam esforço e tempo de resposta.
+As perguntas foram reescritas usando os critérios de Krosnick (2018) e do capítulo de Wolf et al. (2016) sobre desenho de questionários: simplicidade, especificidade, economia de palavras, alternativas exaustivas e mutuamente exclusivas, além de escalas simétricas e familiares. Também usei recomendações dos slides para reduzir \textit{satisficing}: evitar redações longas, conceitos vagos, dupla negação, mudanças bruscas de assunto e listas excessivas. A pergunta sobre meios de informação usa o cue ``últimos 7 dias'', o que reduz a carga de memória; a pergunta sobre principal problema do país funciona como transição entre exposição à política e avaliação de governo; e a preferência partidária usa branching, pois apenas quem diz ter partido de preferência precisa responder qual partido prefere.
 
-Por fim, o instrumento dialoga com formatos usuais de pesquisas eleitorais e de avaliação de governo, inclusive relatórios públicos da Quaest, que frequentemente organizam resultados em blocos como avaliação de governo, voto, rejeição, segmentação e percepção política. A adaptação para Google Forms privilegia perguntas fechadas, escalas de 5 pontos e uma mensagem de recrutamento curta, pois em surveys online a motivação do respondente é limitada e a probabilidade de abandono cresce quando o formulário parece longo ou difícil. O resultado é um questionário de 12 perguntas que preserva o tema do CESOP, atualiza o conteúdo para o contexto presente e aplica os princípios metodológicos da aula.
+Por fim, o instrumento dialoga com formatos usuais de pesquisas eleitorais e de avaliação de governo, inclusive relatórios públicos da Quaest, que frequentemente organizam resultados em blocos de agenda pública, avaliação de governo, percepção política e comportamento eleitoral. A adaptação para Google Forms privilegia perguntas fechadas, escalas de 5 pontos, uma mensagem de recrutamento curta e apenas um pulo necessário, pois em surveys online a motivação do respondente é limitada e a probabilidade de abandono cresce quando o formulário parece longo, repetitivo ou difícil. O resultado é um questionário de 12 perguntas que preserva o tema do CESOP, atualiza o conteúdo para o contexto presente e aplica os princípios metodológicos da aula.
 
 \end{document}

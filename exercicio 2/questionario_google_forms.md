@@ -53,7 +53,7 @@ Referencia complementar de formato:
      - Moro fora do Brasil
      - Prefiro nao responder
 
-### Secao 3 - Interesse, informacao e participacao
+### Secao 3 - Interesse, informacao e agenda publica
 
 4. Em geral, qual e o seu nivel de interesse por politica?
    - Tipo: escala linear
@@ -74,15 +74,18 @@ Referencia complementar de formato:
      - Nao me informei sobre politica nesse periodo
      - Outro
 
-6. Se o voto nao fosse obrigatorio, qual seria a chance de voce votar na proxima eleicao para presidente?
+6. Na sua opiniao, qual destes e hoje o principal problema do Brasil?
    - Tipo: multipla escolha
    - Obrigatoria: sim
    - Alternativas:
-     - Com certeza votaria
-     - Provavelmente votaria
-     - Provavelmente nao votaria
-     - Com certeza nao votaria
-     - Ainda nao sei
+     - Economia e custo de vida
+     - Saude
+     - Educacao
+     - Seguranca publica e violencia
+     - Corrupcao
+     - Meio ambiente
+     - Outro
+     - Nao sei avaliar
 
 ### Secao 4 - Governo e representacao
 
@@ -129,8 +132,14 @@ Referencia complementar de formato:
     - Obrigatoria: sim apenas para quem respondeu "Sim" na pergunta 10
     - Instrucao: escreva a sigla ou o nome do partido.
 
-### Secao 5 - Fechamento
+### Secao 5 - Participacao eleitoral
 
-12. Em uma frase, o que mais poderia aumentar sua confianca na politica brasileira?
-    - Tipo: paragrafo
-    - Obrigatoria: nao
+12. Se o voto nao fosse obrigatorio, qual seria a chance de voce votar na proxima eleicao para presidente?
+    - Tipo: multipla escolha
+    - Obrigatoria: sim
+    - Alternativas:
+      - Com certeza votaria
+      - Provavelmente votaria
+      - Provavelmente nao votaria
+      - Com certeza nao votaria
+      - Ainda nao sei

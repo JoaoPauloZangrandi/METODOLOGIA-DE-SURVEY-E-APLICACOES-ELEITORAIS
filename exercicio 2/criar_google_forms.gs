@@ -47,7 +47,7 @@ function criarFormularioLista2() {
       'Prefiro não responder'
     ]);
 
-  form.addPageBreakItem().setTitle('Interesse, informação e participação');
+  form.addPageBreakItem().setTitle('Interesse, informação e agenda pública');
 
   form.addScaleItem()
     .setTitle('Em geral, qual é o seu nível de interesse por política?')
@@ -69,14 +69,17 @@ function criarFormularioLista2() {
     ]);
 
   form.addMultipleChoiceItem()
-    .setTitle('Se o voto não fosse obrigatório, qual seria a chance de você votar na próxima eleição para presidente?')
+    .setTitle('Na sua opinião, qual destes é hoje o principal problema do Brasil?')
     .setRequired(true)
     .setChoiceValues([
-      'Com certeza votaria',
-      'Provavelmente votaria',
-      'Provavelmente não votaria',
-      'Com certeza não votaria',
-      'Ainda não sei'
+      'Economia e custo de vida',
+      'Saúde',
+      'Educação',
+      'Segurança pública e violência',
+      'Corrupção',
+      'Meio ambiente',
+      'Outro',
+      'Não sei avaliar'
     ]);
 
   form.addPageBreakItem().setTitle('Governo e representação');
@@ -121,18 +124,25 @@ function criarFormularioLista2() {
     .setHelpText('Escreva a sigla ou o nome do partido.')
     .setRequired(true);
 
-  var fechamento = form.addPageBreakItem().setTitle('Fechamento');
+  var participacao = form.addPageBreakItem().setTitle('Participação eleitoral');
 
   preferencia.setChoices([
     preferencia.createChoice('Sim', partido),
-    preferencia.createChoice('Não', fechamento),
-    preferencia.createChoice('Não sei', fechamento),
-    preferencia.createChoice('Prefiro não responder', fechamento)
+    preferencia.createChoice('Não', participacao),
+    preferencia.createChoice('Não sei', participacao),
+    preferencia.createChoice('Prefiro não responder', participacao)
   ]);
 
-  form.addParagraphTextItem()
-    .setTitle('Em uma frase, o que mais poderia aumentar sua confiança na política brasileira?')
-    .setRequired(false);
+  form.addMultipleChoiceItem()
+    .setTitle('Se o voto não fosse obrigatório, qual seria a chance de você votar na próxima eleição para presidente?')
+    .setRequired(true)
+    .setChoiceValues([
+      'Com certeza votaria',
+      'Provavelmente votaria',
+      'Provavelmente não votaria',
+      'Com certeza não votaria',
+      'Ainda não sei'
+    ]);
 
   Logger.log('Link para editar: ' + form.getEditUrl());
   Logger.log('Link para responder: ' + form.getPublishedUrl());
