@@ -9,6 +9,7 @@
 \usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage{enumitem}
+\usepackage{listings}
 
 \renewcommand{\familydefault}{\sfdefault}
 \geometry{margin=2.2cm}
@@ -18,8 +19,22 @@
 
 \definecolor{azul}{HTML}{174A7C}
 \definecolor{azulclaro}{HTML}{EAF2F8}
+\definecolor{cinza}{HTML}{F5F6F8}
+\definecolor{codigo}{HTML}{2B2F33}
 
 \hypersetup{colorlinks=true,urlcolor=azul,linkcolor=azul}
+\lstset{
+  basicstyle=\ttfamily\scriptsize\color{codigo},
+  backgroundcolor=\color{cinza},
+  frame=single,
+  rulecolor=\color{azul},
+  breaklines=true,
+  breakatwhitespace=false,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  tabsize=2
+}
 
 \begin{document}
 
@@ -41,11 +56,26 @@
 
 \section*{Resumo}
 
-Esta entrega apresenta uma solução reprodutível para a ponderação da amostra do ESEB 2022 solicitada na lista 3. O procedimento proposto usa pós-estratificação por raking, com margens populacionais de região, sexo e faixa etária, para aproximar a amostra da população brasileira apurada pelo Censo de 2022. O script \texttt{ponderacao\_eseb22.R} valida a base, calcula pesos, aplica a ponderação e gera tabelas comparando amostra original e ponderada para confiança no governo, confiança no judiciário, percepção da economia nos últimos 12 meses e voto no segundo turno de 2022.
+Esta entrega apresenta uma solução reprodutível para a ponderação da amostra do ESEB 2022 solicitada na lista 3. O procedimento proposto usa pós-estratificação por raking, com margens populacionais de região, sexo e faixa etária, para aproximar a amostra da população brasileira apurada pelo Censo de 2022. O código completo está incluído ao final deste PDF e valida a base, calcula pesos, aplica a ponderação e gera tabelas comparando amostra original e ponderada para confiança no governo, confiança no judiciário, percepção da economia nos últimos 12 meses e voto no segundo turno de 2022.
+
+\section*{Atendimento ao enunciado}
+
+\begin{tabularx}{\textwidth}{p{0.35\textwidth}X}
+\toprule
+\textbf{Item pedido na lista} & \textbf{Como foi tratado nesta entrega} \\
+\midrule
+Selecionar variáveis de ponderação & Foram escolhidas região, sexo e faixa etária, por serem variáveis disponíveis no ESEB e diretamente comparáveis ao Censo. \\
+Obter totais ou proporções populacionais & O código inclui margens populacionais de região, sexo e idade; a seção metodológica explica a origem e o uso dessas margens. \\
+Selecionar procedimento de ponderação & Foi escolhido raking, isto é, ajuste iterativo proporcional das margens amostrais às margens populacionais. \\
+Calcular e aplicar pesos & O código calcula a coluna \texttt{peso}, normalizada para média 1, e a aplica nas tabelas substantivas. \\
+Comparar amostra original e ponderada & O código gera \texttt{tabelas\_resultado.csv} com percentuais originais e ponderados para confiança, economia e voto. \\
+Resumo, introdução, metodologia e resultados & Todas essas seções aparecem neste PDF. Como o arquivo oficial do banco está indisponível, os resultados são apresentados como tabela de saída esperada, sem inventar números. \\
+\bottomrule
+\end{tabularx}
 
 \section*{Nota sobre o banco de dados}
 
-O enunciado informa que a base \texttt{eseb22.csv} deveria estar disponível no site da disciplina. Em 24 de julho de 2026, o endereço publicado no site retornava \textbf{404 Not Found}; o arquivo baixado desse link era uma página HTML de erro, não uma base CSV. Por esse motivo, esta versão não inventa resultados numéricos. A entrega inclui o procedimento completo e executável, de modo que basta substituir o arquivo inválido pelo \texttt{eseb22.csv} correto na pasta do exercício e rodar o script R.
+O enunciado informa que a base \texttt{eseb22.csv} deveria estar disponível no site da disciplina. Em 24 de julho de 2026, o endereço publicado no site retornava \textbf{404 Not Found}; o arquivo baixado desse link era uma página HTML de erro, não uma base CSV. Por esse motivo, esta versão não inventa resultados numéricos. A entrega inclui o procedimento completo e executável dentro deste PDF, de modo que basta usar o \texttt{eseb22.csv} correto para produzir as tabelas finais.
 
 Links verificados:
 \begin{itemize}
@@ -60,11 +90,13 @@ Links verificados:
 
 A lista 3 pede a ponderação de uma amostra de 1800 entrevistas do ESEB 2022. O objetivo é tornar a amostra mais próxima da população brasileira medida pelo Censo de 2022, selecionando variáveis de ponderação, obtendo totais ou proporções populacionais, escolhendo um procedimento de ponderação, calculando pesos e aplicando esses pesos nas variáveis substantivas de interesse.
 
-A estratégia escolhida foi ponderar por \textbf{região}, \textbf{sexo} e \textbf{faixa etária}. Essas variáveis são adequadas porque aparecem na base do exercício, são medidas pelo Censo, estão associadas a diferenças relevantes de composição demográfica e podem afetar opiniões políticas, percepção econômica e voto. A opção por três margens evita um modelo de ponderação excessivamente granular, que poderia produzir pesos muito extremos em uma amostra de 1800 casos.
+A estratégia escolhida foi ponderar por \textbf{região}, \textbf{sexo} e \textbf{faixa etária}. Essas variáveis são adequadas porque aparecem na base do exercício, são medidas pelo Censo, estão associadas a diferenças relevantes de composição demográfica e podem afetar opiniões políticas, percepção econômica e voto. A opção por três margens evita um modelo de ponderação excessivamente granular, que poderia produzir pesos muito extremos em uma amostra de 1800 casos. Variáveis como escolaridade, religião e raça poderiam ser incorporadas em uma versão ampliada, mas aumentariam o risco de células pequenas e pesos instáveis.
 
 \section*{Metodologia}
 
 O procedimento implementado é o \textit{raking}, também conhecido como ajuste iterativo proporcional. O método começa com peso igual a 1 para todos os entrevistados e ajusta sucessivamente os pesos até que as distribuições ponderadas da amostra coincidam, dentro de tolerância numérica, com as margens populacionais escolhidas. Essa abordagem é apropriada quando se deseja calibrar a amostra em várias distribuições marginais sem exigir que todas as células cruzadas estejam bem preenchidas.
+
+Formalmente, se \(w_i\) é o peso do entrevistado \(i\), o algoritmo ajusta \(w_i\) para que, para cada variável de calibração, a soma dos pesos dentro de cada categoria se aproxime da proporção populacional correspondente. Ao final, os pesos são normalizados para média 1. Essa normalização preserva o tamanho nominal da amostra e facilita a leitura dos diagnósticos.
 
 As variáveis de ponderação são:
 \begin{itemize}
@@ -99,8 +131,19 @@ voto no 2º turno & Lula, Bolsonaro, branco/nulo etc. & calculado pelo R & calcu
 
 A interpretação deve comparar as colunas original e ponderada. Diferenças pequenas indicam que a amostra original já estava próxima das margens populacionais usadas. Diferenças maiores indicam que grupos sub ou sobre-representados tinham respostas diferentes nas variáveis substantivas, fazendo a ponderação alterar os percentuais finais. O diagnóstico dos pesos também é essencial: pesos muito dispersos aumentam a variância dos estimadores, enquanto pesos moderados sugerem correção de composição com menor custo de precisão.
 
+\section*{Interpretação substantiva}
+
+Quando a base correta estiver disponível, a comparação deve ser feita em três níveis. Primeiro, deve-se observar o diagnóstico dos pesos: mínimo, máximo, quartis e efeito de desenho aproximado. Pesos muito altos indicam grupos sub-representados na amostra; pesos muito baixos indicam grupos sobre-representados. Segundo, deve-se comparar a distribuição original e ponderada das variáveis de resultado. Se a ponderação alterar confiança no governo, confiança no judiciário, percepção econômica ou voto no segundo turno, isso significa que as variáveis usadas na calibração estão associadas às respostas substantivas. Terceiro, deve-se interpretar a direção da mudança: por exemplo, se uma região ou faixa etária estava sub-representada e tinha comportamento eleitoral diferente, a ponderação deslocará a estimativa final na direção desse grupo.
+
+O resultado ideal não é necessariamente uma grande mudança. Em surveys, ponderação é uma correção de composição, não uma garantia automática de ausência de viés. Se a amostra já estiver próxima da população nas margens escolhidas, os pesos serão moderados e as estimativas ponderadas serão parecidas com as originais. Se houver desequilíbrio amostral, os pesos corrigem parte do problema, mas também aumentam a incerteza. Por isso, o relatório final gerado pelo código deve apresentar tanto as tabelas ponderadas quanto o diagnóstico dos pesos.
+
 \section*{Conclusão}
 
-A solução está pronta para execução assim que a base correta \texttt{eseb22.csv} for disponibilizada. A principal limitação desta versão não é metodológica, mas operacional: o arquivo indicado no site da disciplina não estava acessível. Em vez de substituir a base por dados simulados ou produzir resultados não verificáveis, a entrega documenta o problema, preserva os links oficiais e apresenta um pipeline reprodutível para calcular e aplicar os pesos exatamente como a lista solicita.
+A solução está pronta para execução assim que a base correta \texttt{eseb22.csv} for disponibilizada. A principal limitação desta versão não é metodológica, mas operacional: o arquivo indicado no site da disciplina não estava acessível. Em vez de substituir a base por dados simulados ou produzir resultados não verificáveis, a entrega documenta o problema, preserva os links oficiais e apresenta um pipeline reprodutível para calcular e aplicar os pesos exatamente como a lista solicita. Como a única entrega será este PDF, o código integral foi incluído abaixo.
+
+\newpage
+\section*{Apêndice: código R completo}
+
+\lstinputlisting[language=R]{ponderacao_eseb22.R}
 
 \end{document}
